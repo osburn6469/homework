@@ -8,12 +8,49 @@ namespace UnderstandingOOP
 {
     class Auto
     {
-        public string Make;
+        private string make;
         public string Model;
         public int Year;
         public string Color;
         public int Miles;
-        public int Speed;
+        private int speed;
+
+        public int Speed
+        {
+            get { return speed; }
+            set {
+                    if (value < 0)
+                    {
+                        speed = 0;
+                    } 
+                    else if (value > 110)
+                    {
+                        speed = 110;
+                    }
+                    else
+                    {
+                    speed = value;
+                    }
+                }
+        }
+
+        public string Make
+        {
+            get { return make;  }
+            set {
+                    switch (value)
+                    {
+                        case "Toyota":
+                            make = value;
+                            break;
+                        case "Oldsmobile":
+                            make = value;
+                            break;
+                        default:
+                        throw new Exception("Not a valid Maker");
+                    }
+                }
+        }
 
         public void Accelerate()
         {

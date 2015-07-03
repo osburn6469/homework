@@ -17,7 +17,7 @@ namespace UnderstandingOOP
             myCar.Make = "Dodge";
             myCar.Model = "Journey";
             myCar.Year = 2010;
-            myCar.Color = "Silver";
+            myCar.Color = "Silver"; 
             myCar.Miles = 50000;
 
             Console.WriteLine(myCar.Make + " " + myCar.Model);
