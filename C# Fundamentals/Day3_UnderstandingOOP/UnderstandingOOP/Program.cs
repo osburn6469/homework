@@ -14,7 +14,7 @@ namespace UnderstandingOOP
             Auto myCar = new Auto();
 
             myCar.Speed = 0;
-            myCar.Make = "Dodge";
+            myCar.Make = "Oldsmobile";
             myCar.Model = "Journey";
             myCar.Year = 2010;
             myCar.Color = "Silver"; 

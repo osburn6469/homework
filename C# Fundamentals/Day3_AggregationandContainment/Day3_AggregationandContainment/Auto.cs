@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnderstandingOOP
+namespace Day3_AggregationandContainment
 {
     class Auto
     {
@@ -14,43 +14,54 @@ namespace UnderstandingOOP
         public string Color;
         public int Miles;
         private int speed;
+        public Engine Engine;
 
+        public AutoCustomer Customer = new AutoCustomer();
+
+        public class AutoCustomer
+        {
+            public string LastName;
+            public string Address;
+            public DateTime DateOfPurchase;
+        }
 
         public int Speed
         {
             get { return speed; }
-            set {
-                    if (value < 0)
-                    {
-                        speed = 0;
-                    } 
-                    else if (value > 110)
-                    {
-                        speed = 110;
-                    }
-                    else
-                    {
-                    speed = value;
-                    }
+            set
+            {
+                if (value < 0)
+                {
+                    speed = 0;
                 }
+                else if (value > 110)
+                {
+                    speed = 110;
+                }
+                else
+                {
+                    speed = value;
+                }
+            }
         }
 
         public string Make
         {
-            get { return make;  }
-            set {
-                    switch (value)
-                    {
-                        case "Toyota":
-                            make = value;
-                            break;
-                        case "Oldsmobile":
-                            make = value;
-                            break;
-                        default:
+            get { return make; }
+            set
+            {
+                switch (value)
+                {
+                    case "Toyota":
+                        make = value;
+                        break;
+                    case "Oldsmobile":
+                        make = value;
+                        break;
+                    default:
                         throw new Exception("Not a valid Maker");
-                    }
                 }
+            }
         }
 
         public void Accelerate()
@@ -68,14 +79,14 @@ namespace UnderstandingOOP
 
         public int AccelerateInt(int increasedSpeed)
         {
-            Speed+= increasedSpeed;
+            Speed += increasedSpeed;
             Console.WriteLine("Current speed: " + Speed.ToString());
             return Speed;
         }
 
         public int DeccelerateInt(int decreasedSpeed)
         {
-            Speed-= decreasedSpeed;
+            Speed -= decreasedSpeed;
             //created a private method for encapsalation
             //Console.WriteLine("Current speed: " + Speed.ToString());
             writeLine("Current speed: " + Speed.ToString());
@@ -99,6 +110,5 @@ namespace UnderstandingOOP
         {
             Console.WriteLine(message);
         }
-
     }
 }
