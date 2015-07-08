@@ -30,19 +30,34 @@ namespace Day3_AggregationandContainment
             myCar.Engine = v6;
 
             Console.WriteLine(myCar.Engine.HoresPower.ToString());
-            Console.ReadLine();
+           
 
             AssemblyRobot robot = new AssemblyRobot();
             myCar = robot.AssembleCar("74SLi", v8);
 
             Console.WriteLine(myCar.Engine.HoresPower.ToString());
-            Console.ReadLine();
+           
 
             myCar.Customer.LastName = "Tabor";
             myCar.Customer.Address = "123 E. Main St.";
             myCar.Customer.DateOfPurchase = DateTime.Now;
 
             Console.WriteLine("Owned by: " + myCar.Customer.LastName);
+
+            truck myTruck = new truck();
+
+            myTruck.Model = "Biggie";
+            myTruck.Make = "My Make";
+            myTruck.Color = "Blue";
+            myTruck.TowingCapacity = 100;
+            myTruck.Tow();
+            myTruck.Haul();
+
+            myTruck.Start();
+            myCar.Start();
+            myTruck.Drive(5);
+
+            Auto myCar2 = new Auto("Toyota", "Prius");
             Console.ReadLine();
         }
     }

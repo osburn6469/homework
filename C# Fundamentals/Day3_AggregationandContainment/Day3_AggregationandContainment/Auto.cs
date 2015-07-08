@@ -18,6 +18,38 @@ namespace Day3_AggregationandContainment
 
         public AutoCustomer Customer = new AutoCustomer();
 
+
+        public Auto()
+        {
+            //Do important initialization stuff here.
+            Console.WriteLine("Initialization");
+        }
+
+        public Auto(string _make, string _model) // used _ because we already defined a private variable.
+        {
+            make = _make;
+            Model = _model;
+        }
+
+        public void Drive()
+        {
+
+        }
+
+        public void Drive(int miles)
+        {
+
+        }
+
+        public void Drive(int locX, int locY)
+        {
+
+        }
+
+        public void Drive (string location)
+        {
+
+        }
         public class AutoCustomer
         {
             public string LastName;
@@ -57,6 +89,9 @@ namespace Day3_AggregationandContainment
                         break;
                     case "Oldsmobile":
                         make = value;
+                        break;
+                    case "My Make":
+                    make = value;
                         break;
                     default:
                         throw new Exception("Not a valid Maker");
@@ -104,6 +139,13 @@ namespace Day3_AggregationandContainment
                 message = "You are going to FAST!!!!";
             }
             return initialMessage + " " + message;
+        }
+
+        public virtual void Start()
+        {
+            
+            Console.WriteLine("Starting...");
+
         }
 
         private void writeLine(string message)
