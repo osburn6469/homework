@@ -32,8 +32,8 @@ namespace Day3_AggregationandContainment
             Console.WriteLine(myCar.Engine.HoresPower.ToString());
            
 
-            AssemblyRobot robot = new AssemblyRobot();
-            myCar = robot.AssembleCar("74SLi", v8);
+            //AssemblyRobot robot = new AssemblyRobot();
+            //myCar = robot.AssembleCar("74SLi", v8);
 
             Console.WriteLine(myCar.Engine.HoresPower.ToString());
            
@@ -47,7 +47,7 @@ namespace Day3_AggregationandContainment
             truck myTruck = new truck();
 
             myTruck.Model = "Biggie";
-            myTruck.Make = "My Make";
+            //myTruck.Make = "My Make";
             myTruck.Color = "Blue";
             myTruck.TowingCapacity = 100;
             myTruck.Tow();
@@ -55,9 +55,17 @@ namespace Day3_AggregationandContainment
 
             myTruck.Start();
             myCar.Start();
-            myTruck.Drive(5);
+           // myTruck.Drive(5);
 
-            Auto myCar2 = new Auto("Toyota", "Prius");
+            //Auto myCar2 = new Auto("Toyota", "Prius");
+
+            Auto mycar3 = AssemblyRobot.AssembleCar("Prius", v4); //Set the Assembly Robot to static and created a new object.
+
+            //This will assign Bob to all objects. GLOBAL only.
+            AssemblyRobot myRobot = new AssemblyRobot();
+            //AssemblyRobot.Name = "Bob";   
+
+
             Console.ReadLine();
         }
     }

@@ -8,7 +8,8 @@ namespace Day3_AggregationandContainment
 {
     class Auto
     {
-        private string make;
+        //private string make;   Replaced with enum Make and also modified the method as well
+        private Make make;
         public string Model;
         public int Year;
         public string Color;
@@ -25,31 +26,31 @@ namespace Day3_AggregationandContainment
             Console.WriteLine("Initialization");
         }
 
-        public Auto(string _make, string _model) // used _ because we already defined a private variable.
-        {
-            make = _make;
-            Model = _model;
-        }
+        //public Auto(string _make, string _model) // used _ because we already defined a private variable.
+        //{
+        //    make = _make;
+        //    Model = _model;
+        //}
 
-        public void Drive()
-        {
+        //public void Drive()
+        //{
 
-        }
+        //}
 
-        public void Drive(int miles)
-        {
+        //public void Drive(int miles)
+        //{
 
-        }
+        //}
 
-        public void Drive(int locX, int locY)
-        {
+        //public void Drive(int locX, int locY)
+        //{
 
-        }
+        //}
 
-        public void Drive (string location)
-        {
+        //public void Drive (string location)
+        //{
 
-        }
+        //}
         public class AutoCustomer
         {
             public string LastName;
@@ -77,25 +78,26 @@ namespace Day3_AggregationandContainment
             }
         }
 
-        public string Make
+        public Make Make
         {
             get { return make; }
             set
             {
-                switch (value)
-                {
-                    case "Toyota":
-                        make = value;
-                        break;
-                    case "Oldsmobile":
-                        make = value;
-                        break;
-                    case "My Make":
-                    make = value;
-                        break;
-                    default:
-                        throw new Exception("Not a valid Maker");
-                }
+                //switch (value)
+                //{
+                //    case "Toyota":
+                //        make = value;
+                //        break;
+                //    case "Oldsmobile":
+                //        make = value;
+                //        break;
+                //    case "My Make":
+                //    make = value;
+                //        break;
+                //    default:
+                //        throw new Exception("Not a valid Maker");
+                //}
+                make = value;  //Strongly typed --- !!!!!!!!!!!!!!!!!  Uses enum for only required options.
             }
         }
 
@@ -152,5 +154,15 @@ namespace Day3_AggregationandContainment
         {
             Console.WriteLine(message);
         }
+    }
+
+
+    enum Make
+    {
+        Oldsmobile,
+        Toyota,
+        Chevy,
+        Ford,
+        GMC
     }
 }

@@ -9,7 +9,11 @@ namespace Day3_AggregationandContainment
 
     class AssemblyRobot
     {
-        public Auto AssembleCar(string model, Engine enginType)
+
+        public string  Name { get; set; }
+
+
+        public static Auto AssembleCar(string model, Engine enginType)
         {
             Auto newCar = new Auto();
             newCar.Model = model;
